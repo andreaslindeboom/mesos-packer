@@ -1,0 +1,38 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws.access_key`}}",
+      "secret_key": "{{user `aws.secret_key`}}",
+      "region": "{{user `aws.region`}}",
+      "source_ami": "{{user `aws.source_ami`}}",
+      "instance_type": "{{user `aws.instance_type`}}",
+      "ssh_username": "ubuntu",
+      "ami_name": "kubernetes-master-{{timestamp}}"
+    }, {
+      "type": "docker",
+      "image": "ansible/ubuntu14.04-ansible:stable",
+      "export_path": "docker_image.tar"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "script": "install.sh"
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-import",
+        "repository": "kubernetes-master",
+        "only": [ "docker" ]
+      }
+    ]
+  ]
+}

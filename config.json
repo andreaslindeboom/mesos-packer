@@ -1,0 +1,5 @@
+{
+  "aws.region": "eu-central-1",
+  "aws.source_ami": "ami-6265657f",
+  "aws.instance_type": "t2.micro"
+}

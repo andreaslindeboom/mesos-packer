@@ -15,7 +15,7 @@
       "ami_name": "kubernetes-master-{{timestamp}}"
     }, {
       "type": "docker",
-      "image": "ansible/ubuntu14.04-ansible:stable",
+      "image": "ubuntu:14.04",
       "export_path": "docker_image.tar"
     }
   ],

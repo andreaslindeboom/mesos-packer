@@ -1,5 +1,5 @@
 # Packer-Mesos
-[WIP] Packer builders to build a AMI/Docker Image with Mesos pre-installed (but not configured)
+[WIP] Packer builders to build an AMI/Docker Image with Mesos pre-installed (but not configured)
 
 ##Troubleshooting
 ###The Docker builder hangs at shell script provisioning (OS X)

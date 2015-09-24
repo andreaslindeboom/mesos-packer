@@ -8,11 +8,11 @@
       "source_ami": "{{user `aws.source_ami`}}",
       "instance_type": "{{user `aws.instance_type`}}",
       "ssh_username": "{{user `aws.ssh_username`}}",
-      "ami_name": "{{user `package-name`}}-{{timestamp}}"
+      "ami_name": "{{user `packer.package_name`}}-{{timestamp}}"
     }, {
       "type": "docker",
       "image": "{{user `docker.base_image`}}",
-      "export_path": "{{user `package-name`}}"
+      "export_path": "{{user `packer.package_name`}}"
     }
   ],
   "provisioners": [
@@ -26,7 +26,7 @@
     [
       {
         "type": "docker-import",
-        "repository": "{{user `package-name`}}",
+        "repository": "{{user `packer.package_name`}}",
         "only": [ "docker" ]
       }
     ]

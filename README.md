@@ -1,5 +1,5 @@
-# packer-kubernetes-master
-[WIP] Packer builders to build a Kubernetes master AMI/Docker Image
+# Packer-Mesos
+[WIP] Packer builders to build a AMI/Docker Image with Mesos pre-installed (but not configured)
 
 ##Troubleshooting
 ###The Docker builder hangs at shell script provisioning (OS X)

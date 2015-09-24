@@ -1,5 +1,7 @@
 {
   "aws.region": "eu-central-1",
   "aws.source_ami": "ami-6265657f",
-  "aws.instance_type": "t2.micro"
+  "aws.ssh_username": "ubuntu",
+  "aws.instance_type": "t2.micro",
+  "docker.base_image": "ubuntu:14.04"
 }

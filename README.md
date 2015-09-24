@@ -8,7 +8,10 @@ If you intend to create AMIs, copy secrets.json.dist to secrets.json, and enter 
 If you intend to create Docker images, spin up a [Docker Machine](https://www.docker.com/docker-machine).
 
 ###Amazon EC2 AMI
+(to be fixed)
+```
 packer build -only=amazon-ebs -var-file=secrets.json -var-file=config.json mesos.json
+```
 
 ###Docker Image
 ```
